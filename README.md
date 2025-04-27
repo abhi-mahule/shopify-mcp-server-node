@@ -22,7 +22,7 @@ npm install
 SHOPIFY_ADMIN_API_KEY=your_api_key
 SHOPIFY_ADMIN_API_SECRET=your_api_secret
 SHOPIFY_STORE_URL=your_store.myshopify.com
-SHOPIFY_API_VERSION=2023-10
+SHOPIFY_API_VERSION=2025-04
 ```
 
 3. Build the TypeScript code:
