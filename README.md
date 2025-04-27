@@ -19,9 +19,8 @@ npm install
 
 2. Create a `.env` file in the root directory with your Shopify credentials:
 ```
-SHOPIFY_ADMIN_API_KEY=your_api_key
-SHOPIFY_ADMIN_API_SECRET=your_api_secret
-SHOPIFY_STORE_URL=your_store.myshopify.com
+SHOPIFY_STORE_URL=your-store.myshopify.com
+SHOPIFY_ACCESS_TOKEN=your_access_token
 SHOPIFY_API_VERSION=2025-04
 ```
 
@@ -66,5 +65,3 @@ Replace `/ABSOLUTE/PATH/TO/` with the absolute path to your project directory. F
   }
 }
 ```
-
-After updating the configuration, restart Claude Desktop. The Shopify tools will then be available through the tool selection interface in Claude. 
