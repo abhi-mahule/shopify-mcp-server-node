@@ -1,6 +1,6 @@
 # Shopify MCP Server
 
-A Model Context Protocol server that provides tools for interacting with Shopify APIs.
+A Node.js implementation of a Model Context Protocol server built with TypeScript that provides tools for interacting with Shopify APIs.
 
 ## Features
 
