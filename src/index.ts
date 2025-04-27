@@ -44,11 +44,11 @@ server.tool(
   'get_products',
   'Get a list of products from the Shopify store',
   {
-    limit: z.number().describe('Maximum number of products to return (default: 10)').default(10).optional(),
+    limit: z.number().describe('Maximum number of products to return (default: 50)').default(50).optional(),
   },
   async ({ limit }) => {
     try {
-      const endpoint = `products.json?limit=${limit || 10}`;
+      const endpoint = `products.json?limit=${limit || 50}`;
       console.error(`Requesting: ${baseURL}/${endpoint}`);
       console.error(`Corrected URL: ${baseURL}${endpoint}`);
       const response = await shopifyClient.get(endpoint);
@@ -97,12 +97,12 @@ server.tool(
   'get_orders',
   'Get a list of orders from the Shopify store',
   {
-    limit: z.number().describe('Maximum number of orders to return (default: 10)').default(10).optional(),
+    limit: z.number().describe('Maximum number of orders to return (default: 50)').default(50).optional(),
     status: z.string().describe('Filter orders by status (open, closed, cancelled, any)').optional()
   },
   async ({ limit, status }) => {
     try {
-      let endpoint = `orders.json?limit=${limit || 10}`;
+      let endpoint = `orders.json?limit=${limit || 50}`;
       
       if (status) {
         endpoint += `&status=${status}`;
@@ -128,11 +128,11 @@ server.tool(
   'get_customers',
   'Get a list of customers from the Shopify store',
   {
-    limit: z.number().describe('Maximum number of customers to return (default: 10)').default(10).optional()
+    limit: z.number().describe('Maximum number of customers to return (default: 50)').default(50).optional()
   },
   async ({ limit }) => {
     try {
-      const endpoint = `customers.json?limit=${limit || 10}`;
+      const endpoint = `customers.json?limit=${limit || 50}`;
       console.error(`Requesting: ${baseURL}/${endpoint}`);
       const response = await shopifyClient.get(endpoint);
       return {
@@ -154,11 +154,11 @@ server.tool(
   'Search for products by title, vendor, or tags',
   {
     query: z.string().describe('Search query to find products'),
-    limit: z.number().describe('Maximum number of products to return (default: 10)').default(10).optional()
+    limit: z.number().describe('Maximum number of products to return (default: 50)').default(50).optional()
   },
   async ({ query, limit }) => {
     try {
-      const endpoint = `products.json?limit=${limit || 10}&title=${encodeURIComponent(query)}`;
+      const endpoint = `products.json?limit=${limit || 50}&title=${encodeURIComponent(query)}`;
       console.error(`Requesting: ${baseURL}/${endpoint}`);
       const response = await shopifyClient.get(endpoint);
       return {
